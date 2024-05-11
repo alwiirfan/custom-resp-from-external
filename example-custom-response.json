@@ -1,0 +1,29 @@
+{
+  "status": null,
+  "message": {
+    "total": 3,
+    "data": [
+      {
+        "plate": "string",
+        "gsm_no": "string",
+        "activation_time": "string",
+        "expired_gsm": "string",
+        "status": "string"
+      },
+      {
+        "plate": "string",
+        "gsm_no": "string",
+        "activation_time": "string",
+        "expired_gsm": "string",
+        "status": "string"
+      },
+      {
+        "plate": "string",
+        "gsm_no": "string",
+        "activation_time": "string",
+        "expired_gsm": "string",
+        "status": "string"
+      }
+    ]
+  }
+}
