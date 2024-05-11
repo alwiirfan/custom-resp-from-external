@@ -19,6 +19,7 @@ import com.alwi.rest_template.service.VehicleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -101,9 +102,9 @@ public class VehicleServiceImpl implements VehicleService {
                 for (Map<String, Object> vehicle : vehiclesData) {
                     VehicleResponse vehicleResponse = VehicleResponse.builder()
                             .plate((String) vehicle.get("plate"))
-                            .gsm_no((String) vehicle.get("gsm_no"))
-                            .activation_time((String) vehicle.get("activation_time"))
-                            .expired_gsm((String) vehicle.get("expired_gsm"))
+                            .gsmNo((String) vehicle.get("gsm_no"))
+                            .activationTime((String) vehicle.get("activation_time"))
+                            .expiredGsm((String) vehicle.get("expired_gsm"))
                             .status(getStatus((String) vehicle.get("acc"), (Integer) vehicle.get("speed")))
                             .build();
 

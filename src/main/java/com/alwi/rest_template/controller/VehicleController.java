@@ -25,7 +25,7 @@ public class VehicleController {
 
     private final VehicleService vehicleService;
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(name = "/external", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getVehicles(@RequestHeader(HttpHeaders.AUTHORIZATION) String token) {
         return ResponseEntity.ok(vehicleService.getVehicles(token));
     }
@@ -37,9 +37,9 @@ public class VehicleController {
         List<VehicleResponse> vehicleResponses = vehicleService.getVehiclesQuestion(token);
 
         if (!vehicleResponses.isEmpty()) {
-            CommonResponse<VehicleResponse> commonResponse = CommonResponse.<VehicleResponse>builder()
+            CommonResponse<?> commonResponse = CommonResponse.builder()
                     .status(true)
-                    .message(Message.<VehicleResponse>builder()
+                    .message(Message.builder()
                             .total(vehicleResponses.size())
                             .data(vehicleResponses)
                             .build())
